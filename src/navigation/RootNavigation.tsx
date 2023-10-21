@@ -12,7 +12,12 @@ import {
   Squares2X2Icon as Square2X2IconSolid,
   ListBulletIcon as ListBulletIconSolid,
 } from 'react-native-heroicons/solid';
-import { BottomNavIconSize, BottomNavActiveColor,BottomNavInActiveColor } from "../lib/constants";
+import {
+  BottomNavIconSize,
+  BottomNavActiveColor,
+  BottomNavInActiveColor,
+} from '../lib/constants';
+import Header from '../components/Header';
 
 const RootNavigator = () => {
   const RootStack = createBottomTabNavigator();
@@ -21,7 +26,7 @@ const RootNavigator = () => {
     <RootStack.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerShown: false,
+        header: () => <Header />,
         tabBarStyle: {
           position: 'absolute',
           backgroundColor: '#000000',
@@ -40,9 +45,15 @@ const RootNavigator = () => {
         options={{
           tabBarIcon: ({focused}) =>
             focused ? (
-              <HomeIconSolid size={BottomNavIconSize} color={BottomNavActiveColor} />
+              <HomeIconSolid
+                size={BottomNavIconSize}
+                color={BottomNavActiveColor}
+              />
             ) : (
-              <HomeIconOutline size={BottomNavIconSize} color={BottomNavInActiveColor} />
+              <HomeIconOutline
+                size={BottomNavIconSize}
+                color={BottomNavInActiveColor}
+              />
             ),
         }}
       />
@@ -52,9 +63,15 @@ const RootNavigator = () => {
         options={{
           tabBarIcon: ({focused}) =>
             focused ? (
-              <Square2X2IconSolid size={BottomNavIconSize} color={BottomNavActiveColor} />
+              <Square2X2IconSolid
+                size={BottomNavIconSize}
+                color={BottomNavActiveColor}
+              />
             ) : (
-              <Square2X2IconOutline size={BottomNavIconSize} color={BottomNavInActiveColor} />
+              <Square2X2IconOutline
+                size={BottomNavIconSize}
+                color={BottomNavInActiveColor}
+              />
             ),
         }}
       />
@@ -64,9 +81,15 @@ const RootNavigator = () => {
         options={{
           tabBarIcon: ({focused}) =>
             focused ? (
-              <ListBulletIconOutline size={BottomNavIconSize} color={BottomNavActiveColor} />
+              <ListBulletIconOutline
+                size={BottomNavIconSize}
+                color={BottomNavActiveColor}
+              />
             ) : (
-              <ListBulletIconSolid size={BottomNavIconSize} color={BottomNavInActiveColor} />
+              <ListBulletIconSolid
+                size={BottomNavIconSize}
+                color={BottomNavInActiveColor}
+              />
             ),
         }}
       />
